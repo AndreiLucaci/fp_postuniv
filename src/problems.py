@@ -1,3 +1,4 @@
+import operator
 from functools import reduce
 from itertools import combinations
 
@@ -72,6 +73,10 @@ def lcd(x, y):
 
 def has_lcd_smaller_than_100(l):
     return reduce(lambda x, y: lcd(x, y), l) <= 100
+
+
+def product(iterable):
+    return reduce(operator.mul, iterable, 1)
 
 
 
