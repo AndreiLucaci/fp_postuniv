@@ -40,7 +40,11 @@ def has_same_parity_for_all_elements(l):
 
 
 def is_hill(l):
-    max_index = 0
+    m1, m2 = 0, 0
     for i in range(1, len(l)):
-        if l[i - 1] < l[i]:
-            max_index = i
+        if l[i - 1] < l[i] and m2 == 0:
+            m1 = i
+        elif l[i - 1] > l[i] and m1 != 0:
+            m2 = i
+        else: return False
+    return m1 < m2
