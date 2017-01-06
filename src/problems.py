@@ -1,14 +1,14 @@
 from functools import reduce
+from itertools import combinations
 
 
 def process_simple_sublists(l, func):
-    sublists = []
-    for i in range(len(l)):
-        for j in range(i, len(l)):
-            sublist = [l[k] for k in range(i, j + 1)]
-            if func(sublist):
-                sublists.append(sublist)
-    return max(sublists, key=len)
+    return max(filter(func, get_sublists(l)), key=len)
+
+
+def get_sublists(l):
+    for start, end in combinations(range(len(l)), 2):
+        yield l[start:end + 1]
 
 
 def is_list_distinctive(l):
@@ -37,3 +37,14 @@ def has_gcd_different_from_one(l):
 
 def has_same_parity_for_all_elements(l):
     return all(i % 2 == 1 for i in l) or all(i % 2 == 0 for i in l)
+
+
+def is_hill(l):
+    m1, m2 = 0, 0
+    for i in range(1, len(l)):
+        if l[i - 1] < l[i] and m2 == 0:
+            m1 = i
+        elif l[i - 1] > l[i] and m1 != 0:
+            m2 = i
+        else: return False
+    return m1 < m2
