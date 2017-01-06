@@ -85,5 +85,9 @@ def min_elem_positive(l):
     return min(l) >= 0
 
 
+def max_elem_10(l):
+    return max(l) == 10
+
+
 
 
