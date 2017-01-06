@@ -2,7 +2,7 @@
 from display import *
 
 ''' l - input de la tastatura '''
-#l = get_read_list_answer()
+l = get_read_list_answer()
 
 ''' liste predefinite '''
 #l = [1,2,3,4,5,9,100,-1000,4,3,1,3,4,2,7,6,10]
@@ -13,6 +13,6 @@ from display import *
 
 #l = [1, 121, 12321, 23, 32, 23, 23321, 1211, 232, 343]
 
-l = [1, 2, 6, 16, 20,23, 26, 123]
+#l = [1, 2, 6, 16, 20,23, 26, 123]
 ''' porneste programul '''
 show_menu(l)

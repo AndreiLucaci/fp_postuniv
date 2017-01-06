@@ -48,13 +48,13 @@ for i in range(len(lst)):
 
 '''
 def get_sublists(l):
-    for start, end in combinations(range(len(l)), 2):
-        yield l[start:end + 1]
-    # sublists = []
-    # for i in range(len(l)):
-    #     for j in range(i, len(l)):
-    #         sublists.append(l[i:j+1])
-    # return sublists
+    # for start, end in combinations(range(len(l)), 2):
+    #     yield l[start:end + 1]
+    sublists = []
+    for i in range(len(l)):
+        for j in range(i, len(l)):
+            sublists.append(l[i:j+1])
+    return sublists
 
 '''
 se aplica pe o sublista (care ii tot o lista)
