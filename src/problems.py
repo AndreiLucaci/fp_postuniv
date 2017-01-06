@@ -6,6 +6,10 @@ def process_simple_sublists(l, func):
     return max(filter(func, get_sublists(l)), key=len)
 
 
+def process_interdependend_sublists(l, process_func):
+    return max(map(lambda x: [process_func(x), x], get_sublists(l)), key=lambda x: x[0])[1]
+
+
 def get_sublists(l):
     for start, end in combinations(range(len(l)), 2):
         yield l[start:end + 1]
@@ -68,3 +72,6 @@ def lcd(x, y):
 
 def has_lcd_smaller_than_100(l):
     return reduce(lambda x, y: lcd(x, y), l) <= 100
+
+
+
