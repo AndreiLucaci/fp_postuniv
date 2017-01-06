@@ -16,6 +16,7 @@ def print_menu():
 6. Is hill
 7. Difference
 8. Interval
+9. LCD smaller than 100
 q to exit
 m to show the menu
     ''')
@@ -42,6 +43,8 @@ def get_menu_answer(l):
             print(process_simple_sublists(l[:], has_difference_between_elements_of_a_range))
         elif answer == '8':
             print(process_simple_sublists(l[:], items_in_interval))
+        elif answer == '9':
+            print(process_simple_sublists(l[:], has_lcd_smaller_than_100))
         else:
             print("Invalid command: " + answer + " is not recognized as a valid input.")
 
