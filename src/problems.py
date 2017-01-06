@@ -7,8 +7,10 @@ def process_simple_sublists(l, func):
     return max(filter(func, get_sublists(l)), key=len)
 
 
-def process_interdependend_sublists(l, process_func):
-    return max(map(lambda x: [process_func(x), x], get_sublists(l)), key=lambda x: x[0])[1]
+def process_interdependent_sublists(l, process_func):
+    mapper = list(map(lambda x: [process_func(x), x], get_sublists(l)))
+    max_val = max(mapper, key=lambda x: x[0])[0]
+    return max([i[1] for i in mapper if i[0] == max_val], key=len)
 
 
 def get_sublists(l):
@@ -75,8 +77,13 @@ def has_lcd_smaller_than_100(l):
     return reduce(lambda x, y: lcd(x, y), l) <= 100
 
 
-def product(iterable):
-    return reduce(operator.mul, iterable, 1)
+def product(l):
+    return reduce(operator.mul, l, 1)
+
+
+def min_elem_positive(l):
+    return min(l) >= 0
+
 
 
 
