@@ -1,3 +1,6 @@
+from functools import reduce
+
+
 def process_simple_sublists(l, func):
     sublists = []
     for i in range(len(l)):
@@ -27,7 +30,6 @@ def has_three_distinct_values(l):
     return len(l) == len(set(l)) == 3
 
 
-def gcd(x, y):
-    while y != 0:
-        (x, y) = (y, x % y)
-    return x
+def has_gcd_different_from_one(l):
+    gcd = lambda m, n: m if not n else gcd(n, m % n)
+    return reduce(lambda x, y: gcd(x, y), l) > 1
