@@ -11,6 +11,7 @@ def print_menu():
 1. Distinct sublists
 2. Prime elements
 3. Exactly 3 distinct sublists
+4. GCD of elements is greater than 1
 q to exit
 m to show the menu
     ''')
@@ -27,6 +28,8 @@ def get_menu_answer(l):
             print(process_simple_sublists(l[:], is_list_prime))
         elif answer == '3':
             print(process_simple_sublists(l[:], has_three_distinct_values))
+        elif answer == '4':
+            print(process_simple_sublists(l[:], has_gcd_different_from_one))
         else:
             print("Invalid command: " + answer + " is not recognized as a valid input.")
 
