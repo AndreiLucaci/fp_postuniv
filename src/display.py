@@ -12,6 +12,7 @@ def print_menu():
 2. Prime elements
 3. Exactly 3 distinct sublists
 4. GCD of elements is greater than 1
+5. All elements have the same parity
 q to exit
 m to show the menu
     ''')
@@ -30,6 +31,8 @@ def get_menu_answer(l):
             print(process_simple_sublists(l[:], has_three_distinct_values))
         elif answer == '4':
             print(process_simple_sublists(l[:], has_gcd_different_from_one))
+        elif answer == '5':
+            print(process_simple_sublists(l[:], has_same_parity_for_all_elements))
         else:
             print("Invalid command: " + answer + " is not recognized as a valid input.")
 
