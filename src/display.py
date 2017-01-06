@@ -19,6 +19,7 @@ def print_menu():
 9. LCD smaller than 100
 10. Max sum of elements
 11. Max product of elements
+12. Min element to be positive
 q to exit
 m to show the menu
     ''')
@@ -51,6 +52,8 @@ def get_menu_answer(l):
             print(process_interdependend_sublists(l[:], sum))
         elif answer == '11':
             print(process_interdependend_sublists(l[:], product))
+        elif answer == '12':
+            print(process_simple_sublists(l[:], min_elem_positive))
         else:
             print("Invalid command: " + answer + " is not recognized as a valid input.")
 
