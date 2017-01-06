@@ -33,3 +33,7 @@ def has_three_distinct_values(l):
 def has_gcd_different_from_one(l):
     gcd = lambda m, n: m if not n else gcd(n, m % n)
     return reduce(lambda x, y: gcd(x, y), l) > 1
+
+
+def has_same_parity_for_all_elements(l):
+    return all(i % 2 == 1 for i in l) or all(i % 2 == 0 for i in l)
