@@ -15,6 +15,7 @@ def print_menu():
 5. All elements have the same parity
 6. Is hill
 7. Difference
+8. Interval
 q to exit
 m to show the menu
     ''')
@@ -39,6 +40,8 @@ def get_menu_answer(l):
             print(process_simple_sublists(l[:], is_hill))
         elif answer == '7':
             print(process_simple_sublists(l[:], has_difference_between_elements_of_a_range))
+        elif answer == '8':
+            print(process_simple_sublists(l[:], items_in_interval))
         else:
             print("Invalid command: " + answer + " is not recognized as a valid input.")
 
