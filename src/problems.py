@@ -31,8 +31,11 @@ def has_three_distinct_values(l):
 
 
 def has_gcd_different_from_one(l):
-    gcd = lambda m, n: m if not n else gcd(n, m % n)
     return reduce(lambda x, y: gcd(x, y), l) > 1
+
+
+def gcd(x, y):
+    return x if not y else gcd(y, x % y)
 
 
 def has_same_parity_for_all_elements(l):
@@ -46,7 +49,8 @@ def is_hill(l):
             m1 = i
         elif l[i - 1] > l[i] and m1 != 0:
             m2 = i
-        else: return False
+        else:
+            return False
     return m1 < m2
 
 
@@ -55,4 +59,12 @@ def has_difference_between_elements_of_a_range(l):
 
 
 def items_in_interval(l):
-    return all (0 <= i <= 10 for i in l)
+    return all(0 <= i <= 10 for i in l)
+
+
+def lcd(x, y):
+    return x * y // gcd(x, y)
+
+
+def has_lcd_smaller_than_100(l):
+    return reduce(lambda x, y: lcd(x, y), l) <= 100
