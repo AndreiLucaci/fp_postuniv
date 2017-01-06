@@ -1,3 +1,4 @@
+''' are rezolvarile la probleme '''
 from problems import *
 
 
@@ -21,6 +22,8 @@ def print_menu():
 11. Max product of elements
 12. Min element to be positive
 13. Max element to be 10
+14. All elements are palindrome
+15. All elements end in '6'
 q to exit
 m to show the menu
     ''')
@@ -32,6 +35,7 @@ def get_menu_answer(l):
         if answer == 'q': break
         elif answer == 'm': print_menu()
         elif answer == '1':
+            ''' l[:] - creaza o copie la lista '''
             print(process_simple_sublists(l[:], is_list_distinctive))
         elif answer == '2':
             print(process_simple_sublists(l[:], is_list_prime))
@@ -57,6 +61,10 @@ def get_menu_answer(l):
             print(process_simple_sublists(l[:], min_elem_positive))
         elif answer == '13':
             print(process_simple_sublists(l[:], max_elem_10))
+        elif answer == '14':
+            print(process_simple_sublists(l[:], is_all_sublist_palindrome))
+        elif answer == '15':
+            print(process_simple_sublists(l[:], ends_in_6))
         else:
             print("Invalid command: " + answer + " is not recognized as a valid input.")
 
