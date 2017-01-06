@@ -48,3 +48,7 @@ def is_hill(l):
             m2 = i
         else: return False
     return m1 < m2
+
+
+def has_difference_between_elements_of_a_range(l):
+    return all(-5 <= i - j <= 5 for i, j in zip(l, l[1:]))

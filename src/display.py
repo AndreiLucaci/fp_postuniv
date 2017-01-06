@@ -14,6 +14,7 @@ def print_menu():
 4. GCD of elements is greater than 1
 5. All elements have the same parity
 6. Is hill
+7. Difference
 q to exit
 m to show the menu
     ''')
@@ -36,6 +37,8 @@ def get_menu_answer(l):
             print(process_simple_sublists(l[:], has_same_parity_for_all_elements))
         elif answer == '6':
             print(process_simple_sublists(l[:], is_hill))
+        elif answer == '7':
+            print(process_simple_sublists(l[:], has_difference_between_elements_of_a_range))
         else:
             print("Invalid command: " + answer + " is not recognized as a valid input.")
 
