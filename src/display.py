@@ -17,6 +17,7 @@ def print_menu():
 7. Difference
 8. Interval
 9. LCD smaller than 100
+10. Max sum of elements
 q to exit
 m to show the menu
     ''')
@@ -45,6 +46,8 @@ def get_menu_answer(l):
             print(process_simple_sublists(l[:], items_in_interval))
         elif answer == '9':
             print(process_simple_sublists(l[:], has_lcd_smaller_than_100))
+        elif answer == '10':
+            print(process_interdependend_sublists(l[:], sum))
         else:
             print("Invalid command: " + answer + " is not recognized as a valid input.")
 
